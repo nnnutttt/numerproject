@@ -15,26 +15,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: install frontend
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install frontend
         run: |
           cd project
           npm install
-    - name: install backend
+      - name: install backend
         run: |
           cd server
           npm install
-    - name: test frontend
+      - name: test frontend
         run: |
           cd project
           npm test
-    - name: test backend
+      - name: test backend
         run: |
           cd server
           npm test
-    - name: test docker
+      - name: test docker
         run: docker-compose build
