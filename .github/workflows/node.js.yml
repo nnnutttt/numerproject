@@ -22,19 +22,19 @@ jobs:
         node-version: 18
     - name: install frontend
         run: |
-          cd numer
+          cd project
           npm install
-      - name: install backend
+    - name: install backend
         run: |
           cd server
           npm install
-      - name: test frontend
+    - name: test frontend
         run: |
-          cd numer
+          cd project
           npm test
-      - name: test backend
+    - name: test backend
         run: |
           cd server
           npm test
-      - name: test docker
+    - name: test docker
         run: docker-compose build
